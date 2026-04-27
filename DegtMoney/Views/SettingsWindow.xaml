@@ -1,0 +1,27 @@
+﻿<Window x:Class="DegtMoney.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DegtMoney.Views"
+        mc:Ignorable="d"
+        Title="SettingsWindow" Height="350" Width="400"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Валюта" FontWeight="Bold"/>
+        <ComboBox Grid.Row="1" ItemsSource="{Binding Currencies}" SelectedItem="{Binding SelectedCurrency}" Margin="0,0,0,15"/>
+        <TextBlock Grid.Row="2" Text="Тема" FontWeight="Bold"/>
+        <CheckBox Grid.Row="3" Content="Тёмная тема" IsChecked="{Binding IsDarkTheme}" Margin="0,0,0,15"/>
+        <TextBlock Grid.Row="4" Text="Язык" FontWeight="Bold"/>
+        <ComboBox Grid.Row="5" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" Margin="0,0,0,20"/>
+        <Button Grid.Row="6" Content="Сохранить" Command="{Binding SaveCommand}" Height="30"/>
+    </Grid>
+</Window>

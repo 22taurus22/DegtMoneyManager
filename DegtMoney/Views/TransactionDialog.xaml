@@ -1,0 +1,32 @@
+﻿<Window x:Class="DegtMoney.Views.TransactionDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DegtMoney.Views"
+        mc:Ignorable="d"
+        Title="TransactionDialog" Height="300" Width="400"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Сумма:" FontWeight="Bold"/>
+        <TextBox Grid.Row="1" x:Name="AmountBox" Margin="0,0,0,10"/>
+        <TextBlock Grid.Row="2" Text="Дата:" FontWeight="Bold"/>
+        <DatePicker Grid.Row="3" x:Name="DatePicker" Margin="0,0,0,10"/>
+        <TextBlock Grid.Row="4" Text="Категория:" FontWeight="Bold"/>
+        <ComboBox Grid.Row="5" x:Name="CategoryCombo" DisplayMemberPath="Name" Margin="0,0,0,10"/>
+        <TextBlock Grid.Row="6" Text="Примечание:" FontWeight="Bold"/>
+        <TextBox Grid.Row="7" x:Name="NoteBox" Margin="0,0,0,20"/>
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="OK" Width="75" Margin="5" Click="OkButton_Click"/>
+            <Button Content="Отмена" Width="75" Margin="5" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
